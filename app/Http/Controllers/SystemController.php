@@ -19,16 +19,18 @@ use Illuminate\Validation\ValidationException;
          * @return \Illuminate\Contracts\Support\Renderable
          */
 
-        //Colony
-
-        public function addUser()
-        {
-            return view('users.addUser');
-        }
-
+        // View All Users //
         public function manageUsers()
         {
             return view('users.manageUsers');
         }
 
+
+        // Add User //
+        public function addUser()
+        {
+            return view('users.addUser');
+        }
+
+       
     }

@@ -6,18 +6,18 @@ export default{
     linkActiveClass: 'font-semibold',
     routes: [
 
+        // Add Edit Manage-Users UI Routes for vue.js //
+
         {
             path: '/add-user',
             component: AddUser,
             name: "add-user"
         },
-
         {
             path: '/edit-user/:userId',
             component: AddUser,
             name: "edit-user"
         },
-
         {
             path: '/',
             component: ManageUsers,

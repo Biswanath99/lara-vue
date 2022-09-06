@@ -7,10 +7,14 @@ use DB;
 
 class UsersController extends Controller
 {
+
+    // Add an user 
     public function addUser(Request $request)
     {
         DB::beginTransaction();
 		try{
+
+                //Input field validation
                 $request->validate([
                     'name'       => ['required'],
                     'email'      => ['required'],
@@ -45,22 +49,26 @@ class UsersController extends Controller
             }
     }
     
+    //Get all users
     public function getAllUsers()
     {
         $getData = Users::orderBy('id','DESC')->get()->toJson();
         return $getData;
     }
 
+    //Get an user
     public function getAUser($userId)
     {
         $getData = Users::where('userId',$userId)->get();
         return $getData;
     }
 
+    //Update an user
     public function updateUser($userId,Request $request)
     {
         DB::beginTransaction();
 		try{
+                //Input field validation
                 $request->validate([
                     'name'       => ['required'],
                     'email'      => ['required'],
@@ -84,6 +92,8 @@ class UsersController extends Controller
             }
     }
 
+    //Delete an user
+
     public function delUser($userId)
     {
         DB::beginTransaction();
@@ -99,6 +109,7 @@ class UsersController extends Controller
             }
     }
 
+    //Filter user
     public function filterData(Request $request)
     {
         $name  = $request->name;

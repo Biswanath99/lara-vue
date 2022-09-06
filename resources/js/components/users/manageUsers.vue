@@ -66,12 +66,14 @@
         
         methods:
         {
+            //Read All User
             async readUsers()
             {
                 axios.get('/api/manage-users')
                      .then((response) => {this.allUsers = response.data})
             },
 
+            //Filter User
             filterForm()
             {
                 axios.post('/api/filter-user/',this.filter)
@@ -85,6 +87,7 @@
                 this.readUsers();
             },
 
+            //Delete User
             delUser(userId)
             {
                 this.$confirm("Are you sure you want to delete - "+userId+" ?").then(() => {
@@ -109,6 +112,7 @@
         },
         created()
         {
+            //This method will call when page is loaded
             this.readUsers()
         },
     }

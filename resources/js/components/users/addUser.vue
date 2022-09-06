@@ -41,9 +41,6 @@
     export default {
         data(){
             return{
-                //csrf token
-                
-                 csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
                
                 form:
                 {
@@ -52,8 +49,6 @@
                     email   : '',
                     address : '',
                 },
-                
-                errors:[],
             }
         },
         methods:{
@@ -67,6 +62,7 @@
     
             saveForm()
             {
+                //Edit User 
                 if(this.form.userId != '')
                 {
                     axios.post('/api/update-user/'+this.form.userId,this.form)
@@ -84,6 +80,7 @@
                 }
                 else
                 {
+                    //Add User
                     axios.post('/api/add-user/',this.form)
                          .then((response) => {
                             if (response.data['success'])
@@ -104,22 +101,25 @@
 
         async readUser()
         {
+           //Read specific user for edit
            const currentUrl = window.location.pathname;
           
             axios.get('/api'+currentUrl)
-                 .then((response) => {
-                this.form = {
-                    userId   :    response.data[0].userId,
-                    name     :    response.data[0].name,
-                    email    :    response.data[0].email,
-                    address  :    response.data[0].address
-                 }
+                 .then((response)=>{
+                    this.form =
+                    {
+                        userId   :    response.data[0].userId,
+                        name     :    response.data[0].name,
+                        email    :    response.data[0].email,
+                        address  :    response.data[0].address
+                    }
             });
         },
 
         },
         created() 
         {
+          //This method will call when page is loaded
            this.readUser();
         },
     
