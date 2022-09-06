@@ -1,0 +1,65 @@
+cd /var/wwww/html/silf-imis-test
+echo '***** Import Portal Dump *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/dump-scholPortal.sql
+echo '***** End Import Portal Dump *****'
+echo '***** Migrate Create Tables *****'
+ ./migration-project-create-v3 > ../imislogs/create.log
+echo '*****End Migrate Create Tables *****'
+echo '***** Migrate Alter Tables *****'
+ ./migration-project-alter-v3 > ../imislogs/alter.log
+echo '***** End Migrate Alter Tables *****'
+echo '***** Migrate Fkey Tables *****'
+ ./migration-project-fkey-v3 > ../imislogs/fkey.log
+echo '***** End Migrate Fkey Tables *****'
+echo '***** Seed Tables *****'
+ ./mis-project-seeder > ../imislogs/seeder.log
+echo '***** End Seed Tables *****'
+echo '***** Migrate Errors *****'
+  cat ../imislogs/*.log | grep SQLS
+echo '***** End Migrate Errors *****'
+ echo '***** UpdatAppSession *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/UpdatAppSession.sql
+ echo '***** Update Domain Values *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/updateDomainValues.sql
+ echo '***** insertAppSchedule.sql *****'
+ mysql -u root -pRip@4562 imis8 < public/assets/files/insertAppSchedule.sql
+ echo '***** initializeAdminPermission *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/initializeAdminPermission.sql
+ echo '***** updateAdminPermission *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/updateAdminPermission.sql
+ echo '***** createTallyTables *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/createTallyTables.sql
+ echo '***** createTallyMirrorTables *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/createTallyMirrorTables.sql
+  echo '***** createTriggersOnTallyTables *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/createTriggersOnTallyTables.sql
+ echo '***** testConfigData *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/testConfigData.sql
+ echo '***** testMccData *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/testMccData.sql
+ echo '***** testTrnData *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/testTallyDataImport.sql
+ echo '***** testImportTallyData *****'
+ mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/testInsertDataToTallyTables.sql
+ echo '***** V1_imisProjectViews *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V1_imisProjectViews.sql
+ echo '***** V2_schPrnView *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V2_schPrnView.sql
+ echo '***** V3_scholarshipScheduleView *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V3_scholarshipScheduleView.sql
+ echo '***** V4_lvhPrnView *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V4_lvhPrnView.sql
+ echo '***** V5_lvhProjBenfManagePrnView *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V5_lvhProjBenfManagePrnView.sql
+ echo '***** V6_proposalProjBenfTranchView *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V6_proposalProjBenfTranchView.sql 
+ echo '***** V7_mouPrnView *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V7_mouPrnView.sql
+ echo '***** V8_mouScheduleView *****'
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V8_mouScheduleView.sql
+
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/v9_allPrnView.sql
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V10_employeeExcelView.sql
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V11_bussinessProposalView.sql
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V_12_ScholarshipDetailsDashboardView.sql
+mysql -u imis2020 -pimis2020 silfImisTest < public/assets/files/V_13_insWithAddressAndSchTypeView.sql

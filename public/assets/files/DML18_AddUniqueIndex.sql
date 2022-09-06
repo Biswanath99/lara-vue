@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX prevent_multi_select_voucher ON imisTrnVoucher (prnSelected);  

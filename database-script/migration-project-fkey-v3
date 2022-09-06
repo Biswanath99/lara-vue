@@ -1,0 +1,3 @@
+php artisan migrate:refresh --path=/database/migrations/2021_09_16_004701_i_mis_project_foreign_keys.php
+php artisan migrate:refresh --path=/database/migrations/2021_10_05_125438_foreign_key_set2_i_mis_project.php
+php artisan migrate:refresh --path=/database/migrations/2021_10_30_151846_foreign_key_set3_i_mis_project.php
