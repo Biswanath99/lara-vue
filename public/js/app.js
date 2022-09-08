@@ -1970,15 +1970,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      //csrf token
-      csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
       form: {
         userId: '',
         name: '',
         email: '',
         address: ''
-      },
-      errors: []
+      }
     };
   },
   methods: {
@@ -1990,6 +1987,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     saveForm: function saveForm() {
       var _this = this;
 
+      //Edit User 
       if (this.form.userId != '') {
         axios.post('/api/update-user/' + this.form.userId, this.form).then(function (response) {
           if (response.data['success']) {
@@ -2002,6 +2000,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         });
       } else {
+        //Add User
         axios.post('/api/add-user/', this.form).then(function (response) {
           if (response.data['success']) {
             _this.$fire({
@@ -2025,6 +2024,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                //Read specific user for edit
                 currentUrl = window.location.pathname;
                 axios.get('/api' + currentUrl).then(function (response) {
                   _this2.form = {
@@ -2045,6 +2045,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   created: function created() {
+    //This method will call when page is loaded
     this.readUser();
   }
 });
@@ -2133,6 +2134,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     };
   },
   methods: {
+    //Read All User
     readUsers: function readUsers() {
       var _this = this;
 
@@ -2153,6 +2155,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
+    //Filter User
     filterForm: function filterForm() {
       var _this2 = this;
 
@@ -2165,6 +2168,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.filter.email = '';
       this.readUsers();
     },
+    //Delete User
     delUser: function delUser(userId) {
       var _this3 = this;
 
@@ -2185,6 +2189,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   },
   created: function created() {
+    //This method will call when page is loaded
     this.readUsers();
   }
 });
@@ -57422,7 +57427,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   mode: 'history',
   linkActiveClass: 'font-semibold',
-  routes: [{
+  routes: [// Add Edit Manage-Users UI Routes for vue.js //
+  {
     path: '/add-user',
     component: _components_users_addUser__WEBPACK_IMPORTED_MODULE_0__["default"],
     name: "add-user"
