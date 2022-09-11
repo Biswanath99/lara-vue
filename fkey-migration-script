@@ -1,0 +1,1 @@
+php artisan migrate:refresh --path=/database/migrations/2022_09_11_144248_foreign_key_table.php

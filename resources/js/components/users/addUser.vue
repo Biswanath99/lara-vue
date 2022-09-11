@@ -111,7 +111,7 @@
                         userId   :    response.data[0].userId,
                         name     :    response.data[0].name,
                         email    :    response.data[0].email,
-                        address  :    response.data[0].address
+                        address  :    response.data[0].get_address.address
                     }
             });
         },

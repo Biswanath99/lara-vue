@@ -38,7 +38,7 @@
                         <td>{{eachUser.userId}}</td>
                         <td>{{eachUser.name}}</td>
                         <td style="word-wrap:break-word">{{eachUser.email}}</td>
-                        <td style="word-wrap:break-word">{{eachUser.address}}</td>
+                        <td style="word-wrap:break-word">{{eachUser.get_address.address}}</td>
                         <td class="text-center">
                             <router-link :to="'/edit-user/'+eachUser.userId" style="border-radius: 20%;" class="btn btn-success btn-sm mt-2"><i class="fa fa-edit"></i></router-link>
                             <button @click="delUser(eachUser.userId)"  style="border-radius: 20%;" class="btn btn-custom btn-sm mt-2"><i class="fa fa-trash"></i></button>

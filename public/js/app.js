@@ -2031,7 +2031,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     userId: response.data[0].userId,
                     name: response.data[0].name,
                     email: response.data[0].email,
-                    address: response.data[0].address
+                    address: response.data[0].get_address.address
                   };
                 });
 
@@ -41766,7 +41766,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("td", { staticStyle: { "word-wrap": "break-word" } }, [
-                      _vm._v(_vm._s(eachUser.address))
+                      _vm._v(_vm._s(eachUser.get_address.address))
                     ]),
                     _vm._v(" "),
                     _c(
