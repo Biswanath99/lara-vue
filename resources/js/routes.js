@@ -1,5 +1,7 @@
 import AddUser      from './components/users/addUser';
 import ManageUsers  from './components/users/manageUsers';
+import FileUpload   from './components/fileUpload';
+import ManageFiles  from './components/manageFiles';
 
 export default{
     mode: 'history',
@@ -23,6 +25,15 @@ export default{
             component: ManageUsers,
             name: "manage-users"
         },
-
+        {
+            path: '/file-upload',
+            component: FileUpload,
+            name: "file-upload"
+        },
+        {
+            path: '/manage-files',
+            component: ManageFiles,
+            name: "manage-files"
+        }
   ]
 }

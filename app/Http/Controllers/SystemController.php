@@ -32,5 +32,17 @@ use Illuminate\Validation\ValidationException;
             return view('users.addUser');
         }
 
+        //File Upload
+
+        public function fileUpload()
+        {
+            return view('fileUpload');
+        }
+
+        public function manageFiles()
+        {
+            return view('manageFiles');
+        }
+
        
     }

@@ -1,2 +1,0 @@
- INSERT INTO tableDropdownValues (tableName, columnName, dropdownValues, parentValues) VALUES ('family member','Relation w Head','Brother',NULL);
- INSERT INTO tableDropdownValues (tableName, columnName, dropdownValues, parentValues) VALUES ('family member','Relation w Head','Sister',NULL);

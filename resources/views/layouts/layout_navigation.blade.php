@@ -40,9 +40,14 @@
                 <div id="addUser">
                     @yield('addUser')
                 </div>
-
                 <div id="manageUsers">
                     @yield('manageUsers')
+                </div>
+                <div id="fileUpload">
+                    @yield('fileUpload')
+                </div>
+                <div id="manageFiles">
+                    @yield('manageFiles')
                 </div>
 
             </div> 

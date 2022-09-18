@@ -1,0 +1,89 @@
+------------------------------------------------------
+General
+------------------------------------------------------
+php artisan serve
+php artisan migrate
+php artisan optimize
+php artisan down
+php artisan up
+php artisan env
+php artisan inspire
+php artisan test
+php artisan db
+php artisan list
+php artisan help
+------------------------------------------------------
+Auth & Config & Key
+------------------------------------------------------
+php artisan auth:clear-resets
+php artisan cache:clear
+php artisan cache:table
+php artisan config:cache
+php artisan config:clear
+php artisan key:generate
+------------------------------------------------------
+DB
+------------------------------------------------------
+php artisan db:seed
+php artisan db:wipe
+php artisan key:generate
+------------------------------------------------------
+Make
+------------------------------------------------------
+php artisan make:command 
+php artisan make:model 
+php artisan make:controller 
+php artisan make:seeder 
+php artisan make:factory
+php artisan make:job
+php artisan make:middleware
+php artisan make:migration Tablename --create=Tablename
+php artisan make:notification
+php artisan make:provider
+php artisan make:resource
+php artisan make:rule
+php artisan make:channel
+php artisan make:component
+php artisan make:event
+php artisan make:exception
+php artisan make:mail
+php artisan make:policy
+php artisan make:test
+php artisan make:queue
+php artisan make:model modelname --migration --controller --resource --factory --pivot or --all //shortcut -mcrfp or -a
+
+--------------------------------------------------------
+Migrate
+--------------------------------------------------------
+php artisan migrate:fresh
+php artisan migrate:install
+php artisan migrate:refresh
+php artisan migrate:reset
+php artisan migrate:rollback
+php artisan migrate:status
+----------------------------------------------------------
+Route
+----------------------------------------------------------
+php artisan route:list
+php artisan route:clear
+php artisan route:cache
+---------------------------------------------------------
+Vendor & View
+---------------------------------------------------------
+php artisan vendor:publish
+php artisan view:clear
+php artisan view:cache
+-----------------------------------------------------------------
+Storage
+-----------------------------------------------------------------
+php artisan storage:link
+rm -rf public/storage // remove or unlink storage from laravel
+-----------------------------------------------------------------
+Composer 
+-----------------------------------------------------------------
+
+composer require filename
+composer install
+composer update
+composer dump-autoload
+-----------------------------------------------------------------

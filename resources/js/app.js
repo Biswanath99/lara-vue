@@ -22,4 +22,15 @@ function newFunction() {
         router: new VueRouter(routes)
     });
 
+    const fileUpload = new Vue({
+        el: '#fileUpload',
+        router: new VueRouter(routes)
+    });
+
+    const manageFiles = new Vue({
+        el: '#manageFiles',
+        router: new VueRouter(routes)
+    });
+
+
 }

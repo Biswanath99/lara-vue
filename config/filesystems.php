@@ -55,7 +55,8 @@ return [
             'visibility' => 'public',
         ],
 
-        'imis' => [
+        //External disk define
+        'laraVue' => [
             'driver'=> 'local',
             'root' => env('LOCAL_STORAGE_PATH'),
             'url'  => env('APP_URL').'/storage',

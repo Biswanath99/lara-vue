@@ -1,1 +1,2 @@
 php artisan migrate:refresh --path=/database/migrations/2022_09_11_144212_user_address.php
+php artisan migrate:refresh --path=/database/migrations/2022_09_18_114709_file_upload.php
