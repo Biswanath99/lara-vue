@@ -32,5 +32,9 @@ function newFunction() {
         router: new VueRouter(routes)
     });
 
+    const addPatient = new Vue({
+        el: '#addPatient',
+        router: new VueRouter(routes)
+    });
 
 }

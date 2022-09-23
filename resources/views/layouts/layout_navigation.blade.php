@@ -49,6 +49,9 @@
                 <div id="manageFiles">
                     @yield('manageFiles')
                 </div>
+                <div id="addPatient">
+                    @yield('addPatient')
+                </div>
 
             </div> 
         </div>

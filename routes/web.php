@@ -13,6 +13,8 @@ Route::get('/'                       , 'SystemController@manageUsers');
 #File upload UI
 Route::get('/manage-files'           , 'SystemController@manageFiles');
 Route::get('/file-upload'            , 'SystemController@fileUpload');
+#Add-patient
+Route::get('/add-patient'            , 'SystemController@addPatient');
 
 //API routes for CRUD operations //
 Route::group(['prefix' => 'api'], function()  

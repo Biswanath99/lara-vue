@@ -2,6 +2,7 @@ import AddUser      from './components/users/addUser';
 import ManageUsers  from './components/users/manageUsers';
 import FileUpload   from './components/fileUpload';
 import ManageFiles  from './components/manageFiles';
+import AddPatient   from './components/addPatient';
 
 export default{
     mode: 'history',
@@ -11,29 +12,35 @@ export default{
         // Add Edit Manage-Users UI Routes for vue.js //
 
         {
-            path: '/add-user',
+            path     : '/add-user',
             component: AddUser,
-            name: "add-user"
+            name     : "add-user"
         },
         {
-            path: '/edit-user/:userId',
+            path     : '/edit-user/:userId',
             component: AddUser,
-            name: "edit-user"
+            name     : "edit-user"
         },
         {
-            path: '/',
+            path     : '/',
             component: ManageUsers,
-            name: "manage-users"
+            name     : "manage-users"
         },
         {
-            path: '/file-upload',
+            path     : '/file-upload',
             component: FileUpload,
-            name: "file-upload"
+            name     : "file-upload"
         },
         {
-            path: '/manage-files',
+            path     : '/manage-files',
             component: ManageFiles,
-            name: "manage-files"
+            name     : "manage-files"
+        },
+        {
+            path     : '/add-patient',
+            component: AddPatient,
+            name     : "add-patient"
         }
+    
   ]
 }

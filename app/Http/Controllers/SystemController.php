@@ -44,5 +44,9 @@ use Illuminate\Validation\ValidationException;
             return view('manageFiles');
         }
 
+        public function addPatient()
+        {
+            return view('addPatient');
+        }
        
     }
